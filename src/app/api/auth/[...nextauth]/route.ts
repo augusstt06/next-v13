@@ -9,6 +9,9 @@ export const authOption: NextAuthOptions = {
       clientSecret: process.env.NAVER_CLIENT_SECRET || "",
     }),
   ],
+  pages: {
+    signIn: "/auth/signin",
+  },
 };
 
 const handler = NextAuth(authOption);
