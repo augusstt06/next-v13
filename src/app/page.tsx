@@ -1,3 +1,9 @@
 export default function Home() {
-  return <div></div>;
+  let name: string = "augusstt";
+  return (
+    <div>
+      <h3 className="title">Next 13</h3>
+      <p className="title-sub">by {name}</p>
+    </div>
+  );
 }
