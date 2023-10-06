@@ -1,9 +1,7 @@
 export default function Home() {
-  let name: string = "augusstt";
   return (
-    <div>
-      <h3 className="title">Next 13</h3>
-      <p className="title-sub">by {name}</p>
-    </div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <h1 className="text-4xl font-semibold">NextAuth Tutorial</h1>
+    </main>
   );
 }

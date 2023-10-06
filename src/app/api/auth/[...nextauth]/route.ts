@@ -1,19 +1,34 @@
-import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
-import NaverProvider from "next-auth/providers/naver";
+import CredentialsProvider from "next-auth/providers/credentials";
 
-export const authOption: NextAuthOptions = {
+const handler = NextAuth({
   providers: [
-    NaverProvider({
-      clientId: process.env.NAVER_CLIENT_ID || "",
-      clientSecret: process.env.NAVER_CLIENT_SECRET || "",
+    CredentialsProvider({
+      name: "Credentials",
+
+      credentials: {
+        username: {
+          label: "이메일",
+          type: "text",
+          placeholder: "이메일을 입력하세요",
+        },
+        password: {
+          label: "비밀번호",
+          type: "password",
+          placeholder: "비밀번호를 입력하세요",
+        },
+      },
+      async authorize(credentials, req) {
+        const user = { id: "1", name: "J Smith", email: "jsmith@example.com" };
+
+        if (user) {
+          return user;
+        } else {
+          return null;
+        }
+      },
     }),
   ],
-  pages: {
-    signIn: "/auth/signin",
-  },
-};
-
-const handler = NextAuth(authOption);
+});
 
 export { handler as GET, handler as POST };
