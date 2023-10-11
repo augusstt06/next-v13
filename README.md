@@ -60,6 +60,8 @@ pnpm prisma studio
 
 ## bcrypt
 
+Userd to hash password srings
+
 ```bash
 # Install
 pnpm install --save-dev bcrypt
