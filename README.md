@@ -62,5 +62,7 @@ pnpm prisma studio
 
 ```bash
 # Install
+pnpm install --save-dev bcrypt
+# Install types
 pnpm install --save-dev @types/bcrypt
 ```
