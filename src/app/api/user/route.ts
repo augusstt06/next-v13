@@ -17,4 +17,8 @@ export async function POST(req: Request) {
       password: await bcrypt.hash(body.password, 10),
     },
   });
+
+  const { password, ...result } = user;
+
+  return new Response(JSON.stringify(result));
 }
