@@ -57,3 +57,10 @@ pnpm install @prisma/client
 # Open prisma studio
 pnpm prisma studio
 ```
+
+## bcrypt
+
+```bash
+# Install
+pnpm install --save-dev @types/bcrypt
+```
