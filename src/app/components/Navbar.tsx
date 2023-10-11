@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LoginBtn from "./LoginBtn";
 
 export default function Navbar() {
   return (
@@ -12,6 +13,7 @@ export default function Navbar() {
       >
         User Post Page
       </Link>
+      <LoginBtn />
     </header>
   );
 }
