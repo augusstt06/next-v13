@@ -16,5 +16,5 @@ export async function Post(request: Request) {
   if (user && user.password === body.password) {
     const { password, ...userWithoutPass } = user;
     return new Response(JSON.stringify(userWithoutPass));
-  }
+  } else return new Response(JSON.stringify(null));
 }
